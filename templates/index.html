@@ -1,8 +1,9 @@
+  {% load static %}
+  {% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html>
 
 <head>
-  {% load static %}
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -97,8 +98,9 @@
                           Heustonn <br>
                           Maintenance <br>
                           <span>
-                            Service
+                            Service &nbsp;{{ dest1.name }} 
                           </span>
+                          <p>{{ dest1.desc}}</p>
                         </h1>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -136,6 +138,7 @@
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                           sed do eiusmod tempor incididunt ut labore
                         </p>
+
                       </div>
                     </div>
                   </div>
@@ -242,24 +245,27 @@
           <h3 class=" ">
             OUR SERVICES
           </h3>
+          &nbsp;  <p>${{ price }}</p>
         </div>
         <p class="">
           ad minim veniam, quis nostrud exercitation ullamco
         </p>
         <div class="service_container ">
           <div class="row">
+          {% for dest in dests %}
             <div class="col-md-3">
               <div class="box b-1">
                 <div class="img-box">
-                  <img src="{% static 'images/s-1.jpg' %}" alt="">
+                  <img src="{{baseUrl}}/{{ dest.img }}" alt="">
                 </div>
                 <div class="detail-box">
                   <h6>
-                    Tab Services
+                    {{ dest.name }}
                   </h6>
                   <p>
-                    adipiscing elit, sed do eiusmod tempor incididunt
+                    {{ dest.desc}}
                   </p>
+                  <p>{{ dest.price }}</p>
                   <div class="btn-box">
                     <a href="">
                       Read More
@@ -269,7 +275,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
+          {% endfor %}
+            <!-- <div class="col-md-3">
               <div class="box b-2">
                 <div class="img-box">
                   <img src="{% static 'images/s-2.jpg' %}" alt="">
@@ -331,7 +338,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
