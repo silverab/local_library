@@ -8,3 +8,4 @@ class Maintenace:
 	img: str
 	desc: str
 	price: int
+	offer: bool

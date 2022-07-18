@@ -258,14 +258,17 @@
                 <div class="img-box">
                   <img src="{{baseUrl}}/{{ dest.img }}" alt="">
                 </div>
+                {% if dest.offer %}
+                  <span class="badge badge-pill badge-success">Special offer</span>
+                {% endif %}
                 <div class="detail-box">
-                  <h6>
+                  <h6> 
                     {{ dest.name }}
                   </h6>
                   <p>
                     {{ dest.desc}}
                   </p>
-                  <p>{{ dest.price }}</p>
+                  <p>${{ dest.price }}</p>
                   <div class="btn-box">
                     <a href="">
                       Read More
